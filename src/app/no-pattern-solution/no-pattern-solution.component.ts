@@ -6,24 +6,25 @@ import { Component } from "@angular/core";
   styleUrls: ["./no-pattern-solution.component.css"]
 })
 export class NoPatternSolutionComponent {
-  dog = "🐶";
-  cat = "🐱";
-  duck = "🦆";
-  lion = "🦁";
+  a: number;
+  b: number;
+  r: number;
+  selectedOperation: string;
 
-  makeSound(animal: string) {
-    switch (animal) {
-      case "🐶":
-        console.log("Auuuuuuu");
+  onOperationChange(newValue) {
+    this.selectedOperation = newValue;
+  }
+
+  calculate() {
+    switch (this.selectedOperation) {
+      case "ADD":
+        this.r = this.a + this.b;
         break;
-      case "🐱":
-        console.log("Miauuuuu");
+      case "MULTIPLY":
+        this.r = this.a * this.b;
         break;
-      case "🦆":
-        console.log("Quak quak");
-        break;
-      case "🦁":
-        console.log("Grraaaauuuu");
+      case "SUBTRACT":
+        this.r = this.a - this.b;
         break;
     }
   }

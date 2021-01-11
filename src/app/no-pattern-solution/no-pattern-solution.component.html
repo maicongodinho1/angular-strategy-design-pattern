@@ -1,4 +1,13 @@
-<a routerLink="" (click)="makeSound(dog)">{{dog}}</a>
-<a routerLink="" (click)="makeSound(cat)">{{cat}}</a>
-<a routerLink="" (click)="makeSound(duck)">{{duck}}</a>
-<a routerLink="" (click)="makeSound(lion)">{{lion}}</a>
+<input type="number" [(ngModel)]="a"/>
+<br>
+<input type="number" [(ngModel)]="b"/>
+<br>
+<select [(ngModel)]="selectedOperation" (ngModelChange)="onOperationChange($event)">
+  <option value="ADD">Add</option>
+  <option value="MULTIPLY">Multiply</option>
+  <option value="SUBTRACT">Subtract</option>
+</select>
+<br>
+<button (click)="calculate()">Calculate</button>
+<br>
+Result: {{r}}
