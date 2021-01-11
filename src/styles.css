@@ -1,0 +1,10 @@
+a {
+  font-size: 40px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+  font-family: "Roboto, monospace";
+  font-size: 22px;
+}
