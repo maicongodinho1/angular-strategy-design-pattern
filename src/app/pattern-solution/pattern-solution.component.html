@@ -1,13 +1,22 @@
-<input type="number" [(ngModel)]="a"/>
-<br>
-<input type="number" [(ngModel)]="b"/>
-<br>
-<select [(ngModel)]="selectedOperation" (ngModelChange)="onOperationChange($event)">
+First number:
+<br />
+<input type="number" [(ngModel)]="a" />
+<br />
+Second number:
+<br />
+<input type="number" [(ngModel)]="b" />
+<br />
+Operation:
+<br />
+<select
+  [(ngModel)]="selectedOperation"
+  (ngModelChange)="onOperationChange($event)"
+>
   <option value="ADD">Add</option>
   <option value="MULTIPLY">Multiply</option>
   <option value="SUBTRACT">Subtract</option>
 </select>
-<br>
+<br /><br />
 <button (click)="calculate()">Calculate</button>
-<br>
+<br /><br />
 Result: {{r}}
