@@ -11,7 +11,7 @@ export class NoPatternSolutionComponent {
   duck = "🦆";
   lion = "🦁";
 
-  roar(animal: string) {
+  makeSound(animal: string) {
     switch (animal) {
       case "🐶":
         console.log("Auuuuuuu");
@@ -22,8 +22,8 @@ export class NoPatternSolutionComponent {
       case "🦆":
         console.log("Quak quak");
         break;
-      case "🦉":
-        console.log("Oooowlll oooowlll");
+      case "🦁":
+        console.log("Grraaaauuuu");
         break;
     }
   }

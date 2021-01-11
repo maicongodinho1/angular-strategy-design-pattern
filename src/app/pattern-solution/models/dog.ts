@@ -1,10 +1,9 @@
 import { Animal } from "./animal";
-import { AnimalRoar } from "./animal-roar";
 
-export class Dog implements Animal, AnimalRoar {
+export class Dog implements Animal {
   specie = "🐶";
 
-  roar() {
+  makeSound() {
     console.log("Auuuuuuu");
   }
 }
