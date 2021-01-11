@@ -1,5 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { Animal } from "./models/animal";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "no-pattern-solution",
@@ -7,23 +6,13 @@ import { Animal } from "./models/animal";
   styleUrls: ["./no-pattern-solution.component.css"]
 })
 export class NoPatternSolutionComponent {
-  animals: Animal[] = [
-    {
-      specie: "🐶"
-    },
-    {
-      specie: "🐱"
-    },
-    {
-      specie: "🦆"
-    },
-    {
-      specie: "🦉"
-    }
-  ];
+  dog = "🐶";
+  cat = "🐱";
+  duck = "🦆";
+  lion = "🦁";
 
-  makeSound(animal: Animal) {
-    switch (animal.specie) {
+  roar(animal: string) {
+    switch (animal) {
       case "🐶":
         console.log("Auuuuuuu");
         break;

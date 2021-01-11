@@ -1,0 +1,11 @@
+span {
+  font-family: Lato;
+}
+
+span.title {
+  font-size: 40px;
+}
+
+span.notes {
+  font-size: 11px;
+}
