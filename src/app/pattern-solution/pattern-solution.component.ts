@@ -1,16 +1,16 @@
 import { Component } from "@angular/core";
 
-// A interface estratégia declara operações comuns a todas as
-// versões suportadas de algum algoritmo. O contexto usa essa
-// interface para chamar o algoritmo definido pelas estratégias
-// concretas.
+// The strategy interface declares operations common to all
+// supported versions of some algorithm. The context uses this
+// interface to call the algorithm defined by the concrete
+// strategies.
 interface Strategy {
   execute(a: number, b: number): number;
 }
 
-// Estratégias concretas implementam o algoritmo enquanto seguem
-// a interface estratégia base. A interface faz delas
-// intercomunicáveis no contexto.
+// Concrete strategies implement the algorithm while following
+// the base strategy interface. The interface makes them
+// interchangeable in the context.
 class ConcreteStrategyAdd implements Strategy {
   execute(a: number, b: number): number {
     return a + b;
@@ -29,24 +29,24 @@ class ConcreteStrategySubtract implements Strategy {
   }
 }
 
-// O contexto define a interface de interesse para clientes.
+// The context defines the interface of interest to clients.
 class Context {
-  // O contexto mantém uma referência para um dos objetos
-  // estratégia. O contexto não sabe a classe concreta de uma
-  // estratégia. Ele deve trabalhar com todas as estratégias
-  // através da interface estratégia.
+  // The context maintains a reference to one of the strategy
+  // objects. The context doesn't know the concrete class of a
+  // strategy. It should work with all strategies via the
+  // strategy interface.
   private _strategy: Strategy;
 
-  // Geralmente o contexto aceita uma estratégia através do
-  // construtor, e também fornece um setter para que a
-  // estratégia possa ser trocado durante o tempo de execução.
+  // Usually the context accepts a strategy through the
+  // constructor, and also provides a setter so that the
+  // strategy can be switched at runtime.
   public set strategy(strategy: Strategy) {
     this._strategy = strategy;
   }
 
-  // O contexto delega algum trabalho para o objeto estratégia
-  // ao invés de implementar múltiplas versões do algoritmo
-  // por conta própria.
+  // The context delegates some work to the strategy object
+  // instead of implementing multiple versions of the
+  // algorithm on its own.
   executeStrategy(a: number, b: number): number {
     return this._strategy.execute(a, b);
   }
@@ -67,9 +67,9 @@ export class PatternSolutionComponent {
     this.selectedOperation = newValue;
   }
 
-  // O código cliente escolhe uma estratégia concreta e passa ela
-  // para o contexto. O cliente deve estar ciente das diferenças
-  // entre as estratégia para que faça a escolha certa.
+  // The client code picks a concrete strategy and passes it to
+  // the context. The client should be aware of the differences
+  // between strategies in order to make the right choice.
   calculate() {
     let context = new Context();
 
